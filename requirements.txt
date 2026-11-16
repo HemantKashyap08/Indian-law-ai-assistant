@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+google-genai
+chromadb
+python-dotenv
+pypdf
+slowapi
+pymongo[srv]
+certifi

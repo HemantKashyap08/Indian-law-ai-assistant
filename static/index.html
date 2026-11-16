@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NyayaMitra – Which Indian law applies to what happened?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@500;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F6FA;--surface:#fff;--text:#141B2D;--muted:#5A6479;--rule:#DDE2EC;--brand:#3437A8;--brand-text:#fff;--soft:#E9EAFB;
+--high:#B42318;--medium:#A15C07;--low:#475467;--warn-bg:#FFF4D6;--warn-text:#4A3A08;--emg-bg:#FDE7E4;--emg-text:#5C1A14;
+--serif:"Literata",Georgia,serif;--sans:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1320;--surface:#171C2D;--text:#E8ECF6;--muted:#9DA7BE;--rule:#2A3150;--brand:#8E93FF;--brand-text:#0F1320;--soft:#232A4A;
+--high:#F2928A;--medium:#E6B25E;--low:#A9B3C7;--warn-bg:#3A3015;--warn-text:#F3E2AE;--emg-bg:#40191A;--emg-text:#F8D3CE}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.65 var(--sans);padding-bottom:90px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--rule);background:var(--surface)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;padding-bottom:14px}
+.brand{font:700 1.3rem var(--serif);color:var(--brand)}
+.badge{font-size:.82rem;color:var(--muted)}
+.hero{padding:44px 0 20px}
+h1{font:700 clamp(1.8rem,5vw,2.7rem)/1.18 var(--serif);margin:0 0 12px;max-width:20ch}
+.lede{color:var(--muted);max-width:56ch;margin:0 0 26px}
+.composer{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:18px}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+textarea,input,select{width:100%;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:11px 12px}
+textarea{min-height:140px;resize:vertical}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.meta{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;margin-top:14px;align-items:end}
+button{font:inherit;font-weight:600;border-radius:8px;padding:11px 18px;cursor:pointer;border:1px solid var(--brand)}
+.primary{background:var(--brand);color:var(--brand-text)}
+.ghost{background:transparent;color:var(--brand)}
+button:disabled{opacity:.55;cursor:wait}
+.actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.actions .primary{flex:1 1 220px;padding:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center;font-size:.9rem;color:var(--muted)}
+.chip{background:var(--soft);color:var(--text);border:none;border-radius:999px;padding:6px 14px;font-weight:500;font-size:.88rem}
+.privacy{font-size:.82rem;color:var(--muted);margin:14px 2px 0}
+.stage{margin:28px 0;padding:18px;background:var(--surface);border:1px solid var(--rule);border-radius:12px}
+.bar{height:5px;border-radius:3px;background:var(--soft);overflow:hidden;margin-top:12px}
+.bar i{display:block;height:100%;width:35%;background:var(--brand);animation:slide 1.4s ease-in-out infinite}
+@keyframes slide{0%{margin-left:-35%}100%{margin-left:100%}}
+@media (prefers-reduced-motion:reduce){.bar i{animation:none;width:100%}}
+.box{padding:14px 16px;border-radius:8px;margin:18px 0}
+.emg{background:var(--emg-bg);color:var(--emg-text);font-weight:500}
+.ask{background:var(--warn-bg);color:var(--warn-text)}
+h2{font:700 1.3rem var(--serif);margin:34px 0 10px}
+h3{font-size:1rem;margin:22px 0 6px}
+.summary{background:var(--surface);border:1px solid var(--rule);border-left:5px solid var(--brand);border-radius:8px;padding:16px 18px}
+.summary p{margin:0}
+.tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{background:var(--soft);border-radius:999px;padding:2px 12px;font-size:.82rem;font-weight:600}
+details.p{background:var(--surface);border:1px solid var(--rule);border-left:5px solid var(--low);border-radius:8px;margin:10px 0}
+details.p.High{border-left-color:var(--high)}details.p.Medium{border-left-color:var(--medium)}
+details.p summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+details.p summary::-webkit-details-marker{display:none}
+details.p summary::after{content:"+";font-size:1.3rem;color:var(--muted)}
+details.p[open] summary::after{content:"\2212"}
+.pt{font:600 1.05rem var(--serif)}.ps{font-size:.86rem;color:var(--muted)}
+.rel{font-weight:700;white-space:nowrap;font-size:.85rem}.High .rel{color:var(--high)}.Medium .rel{color:var(--medium)}.Low .rel{color:var(--low)}
+.body{padding:0 16px 14px}.body p{margin:8px 0}
+pre{white-space:pre-wrap;font:.9rem var(--sans);background:var(--bg);padding:12px;border-radius:8px;margin:6px 0 0}
+ul.check{list-style:none;padding:0;margin:6px 0}
+ul.check li{padding:6px 0 6px 28px;position:relative}
+ul.check li::before{content:"";position:absolute;left:2px;top:12px;width:13px;height:13px;border:2px solid var(--brand);border-radius:3px}
+.note{color:var(--muted);font-size:.86rem}
+.tools{display:flex;gap:10px;margin-top:26px}
+.follow{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--rule);padding:12px 16px}
+.follow div{max-width:820px;margin:0 auto;display:flex;gap:10px}
+.follow input{flex:1}
+[hidden]{display:none!important}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.badge{display:none}}
+@media print{.top,.composer,.chips,.privacy,.follow,.tools,.hero{display:none}details.p .body{display:block}body{background:#fff;color:#000;padding:0}}
+.help{background:var(--emg-bg);color:var(--emg-text);font-size:.86rem}
+.help .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;align-items:center;padding-top:8px;padding-bottom:8px}
+.help a{color:inherit;font-weight:600}
+.icon{width:46px;height:46px;padding:0;display:grid;place-items:center}
+.icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#mic[aria-pressed=true]{background:var(--high);border-color:var(--high);color:#fff}
+ul.check li{cursor:pointer}
+ul.check li.done{text-decoration:line-through;opacity:.6}
+ul.check li.done::before{background:var(--brand)}
+.tools{flex-wrap:wrap}
+@media print{.help{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><span class="brand">NyayaMitra</span><span class="badge">General legal information, not legal advice</span></div></header>
+<div class="help"><div class="wrap"><strong>Emergency:</strong><a href="tel:112">112 Police</a><a href="tel:1091">1091 Women</a><a href="tel:1098">1098 Child</a><a href="tel:1930">1930 Cyber fraud</a><a href="tel:15100">15100 Free legal aid</a></div></div>
+<main class="wrap">
+  <section class="hero">
+    <h1>Find out which Indian law applies to what happened.</h1>
+    <p class="lede">Describe the incident in your own words, in any Indian language. You get the relevant sections, why they apply, and what to do next.</p>
+    <div class="composer">
+      <label for="case">What happened?</label>
+      <textarea id="case" maxlength="4000" placeholder="Who was involved, where it happened, and what was said or done."></textarea>
+      <div class="meta"><span id="hint">Add names of places and dates if you remember them.</span><span id="count">0 / 4000</span></div>
+      <div class="grid">
+        <div><label for="date">When did it happen?</label><input type="date" id="date"></div>
+        <div><label for="lang">Voice language</label>
+          <select id="lang"><option value="en-IN">English</option><option value="hi-IN">हिन्दी</option><option value="kn-IN">ಕನ್ನಡ</option><option value="ta-IN">தமிழ்</option><option value="te-IN">తెలుగు</option><option value="bn-IN">বাংলা</option><option value="mr-IN">मराठी</option></select></div>
+        <button type="button" class="ghost icon" id="mic" aria-pressed="false" aria-label="Speak your case" title="Speak"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      </div>
+      <div class="actions"><button type="button" class="primary" id="run">Find relevant laws</button><button type="button" class="ghost" id="reset">Start a new case</button></div>
+      <div class="chips">Try:
+        <button class="chip" data-ex="Someone snatched my phone from my hand while I was walking home last night.">Phone snatching</button>
+        <button class="chip" data-ex="A shop took my money for an online order and never delivered it. They stopped replying to my messages.">Online cheating</button>
+        <button class="chip" data-ex="My landlord refuses to return my security deposit even though I vacated the house a month ago.">Deposit not returned</button>
+      </div>
+    </div>
+    <p class="privacy">Your text is sent to Google’s Gemini API to prepare the answer. This site does not store your cases. Avoid sharing phone numbers or ID numbers.</p>
+  </section>
+  <div id="out" aria-live="polite"></div>
+</main>
+<form class="follow" id="follow" hidden><div><input id="fq" placeholder="Ask a follow-up, for example: what if the accused is a minor?" aria-label="Follow-up question"><button class="primary" id="fbtn">Ask</button></div></form>
+
+<script>
+const $=id=>document.getElementById(id);let history=[];let timer=null;let lastSections=[];
+const STAGES=["Reading your case…","Searching the law database…","Matching sections to your facts…","Checking every section before showing it…"];
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function lab(k,v){if(!v)return null;const p=el("p");p.append(el("strong",null,k+": "),document.createTextNode(v));return p}
+function block(title,items,cls){if(!items||!items.length)return null;const w=el("div");w.append(el("h3",null,title));const u=el("ul",cls);items.forEach(i=>u.append(cls==="check"?checkItem(i):el("li",null,i)));w.append(u);return w}
+function checkItem(t){const li=el("li",null,t);li.tabIndex=0;li.setAttribute("role","checkbox");li.setAttribute("aria-checked","false");
+  const tg=()=>{li.classList.toggle("done");li.setAttribute("aria-checked",li.classList.contains("done"))};
+  li.onclick=tg;li.onkeydown=e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();tg()}};return li}
+function plainText(d){const L=["NyayaMitra - general legal information, not legal advice"];if(d.case_summary)L.push("\nSituation: "+d.case_summary);
+  (d.applicable_provisions||[]).forEach(p=>L.push(`\n- ${p.act}, ${p.section_or_article}: ${p.title} (${p.relevance||""} relevance)\n  ${p.why_it_applies||""}`));
+  if((d.possible_next_steps||[]).length)L.push("\nNext steps:\n- "+d.possible_next_steps.join("\n- "));return L.join("\n")}
+function count(){$("count").textContent=$("case").value.length+" / 4000"}
+$("case").addEventListener("input",count);
+
+function loading(){let i=0;const s=el("div","stage"),m=el("div",null,STAGES[0]),b=el("div","bar");b.append(el("i"));s.append(m,b);
+  $("out").replaceChildren(s);s.scrollIntoView({behavior:"smooth",block:"center"});clearInterval(timer);timer=setInterval(()=>{i=Math.min(i+1,STAGES.length-1);m.textContent=STAGES[i]},3000)}
+function fail(msg){clearInterval(timer);const b=el("div","box emg",msg);b.setAttribute("role","alert");$("out").replaceChildren(b);b.scrollIntoView({behavior:"smooth",block:"center"})}
+
+function render(d){clearInterval(timer);const o=$("out");o.replaceChildren();
+  if(d.emergency_contacts&&d.emergency_contacts.length){const b=el("div","box emg");b.append(el("strong",null,"If you are in danger, call now: "),document.createTextNode(d.emergency_contacts.join("  |  ")));o.append(b)}
+  if(d.needs_clarification)o.append(el("div","box ask","To be more precise, please tell me: "+d.needs_clarification));
+  o.append(el("h2",null,"Your situation"));
+  const s=el("div","summary");s.append(el("p",null,d.case_summary||"No summary available."));
+  const tg=el("div","tags");(d.case_type||[]).forEach(t=>tg.append(el("span","tag",t)));if(tg.children.length)s.append(tg);o.append(s);
+
+  const order={High:0,Medium:1,Low:2};const provs=(d.applicable_provisions||[]).slice().sort((a,b)=>(order[a.relevance]??2)-(order[b.relevance]??2));
+  lastSections=provs.map(p=>p.act+" "+p.section_or_article);o.append(el("h2",null,"Laws that may apply"));
+  if(!provs.length)o.append(el("p",null,"No matching provision was found in the law database. Add more detail, or ask a lawyer."));
+  provs.forEach((p,i)=>{const rel=order[p.relevance]!==undefined?p.relevance:"Low";
+    const dt=el("details","p "+rel);if(i===0)dt.open=true;
+    const sm=el("summary"),l=el("div");l.append(el("div","pt",`${p.section_or_article}: ${p.title}`),el("div","ps",p.act+(p.old_or_new_equivalent?" · Equivalent: "+p.old_or_new_equivalent:"")));
+    sm.append(l,el("span","rel",rel+" relevance"));dt.append(sm);
+    const bd=el("div","body");[["Why it applies",p.why_it_applies],["Why it may not apply",p.why_it_may_not_apply],["Punishment or remedy",p.punishment_or_remedy]].forEach(([k,v])=>{const x=lab(k,v);if(x)bd.append(x)});
+    if(p.source_text){const dd=el("details");dd.append(el("summary",null,"Read the exact text"),el("pre",null,p.source_text));bd.append(dd)}
+    dt.append(bd);o.append(dt)});
+  if(provs.length)o.append(el("p","note","Each section matches a record in the law database. Whether it applies to your facts still needs a lawyer’s judgment."));
+  const r=d.validation&&d.validation.unverified_citations_removed;if(r)o.append(el("p","note",r+" suggestion(s) were removed because they could not be found in the law database."));
+  [["What you can do next",d.possible_next_steps],["Documents and evidence to collect",d.documents_or_evidence_to_collect]].forEach(([t,i])=>{const b=block(t,i,"check");if(b)o.append(b)});
+  const mi=block("Details that would change this answer",d.missing_information);if(mi)o.append(mi);
+  o.append(el("p","note",d.disclaimer||"This is general legal information, not legal advice."));
+  const tools=el("div","tools"),mk=(t,fn)=>{const b=el("button","ghost",t);b.type="button";b.onclick=()=>fn(b);tools.append(b)};
+  mk("Save or print",()=>window.print());
+  mk("Copy answer",b=>navigator.clipboard.writeText(plainText(d)).then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy answer",2000)}).catch(()=>{b.textContent="Copy failed"}));
+  mk("Share on WhatsApp",()=>window.open("https://wa.me/?text="+encodeURIComponent(plainText(d).slice(0,1500)),"_blank","noopener"));
+  o.append(tools);
+  $("follow").hidden=false;o.scrollIntoView({behavior:"smooth",block:"start"})}
+
+async function run(text){
+  const min=history.length?3:15;
+  if(text.length<min){fail(history.length?"Please type a little more so I can understand your question.":"Please describe what happened in at least a sentence.");return}
+  $("run").disabled=true;$("fbtn").disabled=true;loading();
+  try{const r=await fetch("/api/analyze",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({case:text,incident_date:$("date").value||null,history})});
+    if(!r.ok){let m="The server had a problem. Please try again in a moment.";try{m=(await r.json()).detail||m}catch(_){}throw new Error(m)}
+    const d=await r.json();render(d);history.push({role:"user",text});
+    history.push({role:"assistant",text:(d.case_summary||"")+" Sections: "+(d.applicable_provisions||[]).map(p=>p.act+" "+p.section_or_article).join(", ")})
+  }catch(e){fail(e.message||"Could not reach the server. Check that it is running.")}
+  finally{$("run").disabled=false;$("fbtn").disabled=false}}
+
+$("run").onclick=()=>{run($("case").value.trim());};
+$("follow").addEventListener("submit",e=>{e.preventDefault();const q=$("fq").value.trim();if(q){$("fq").value="";run(q)}});
+$("reset").onclick=()=>{history=[];$("case").value="";$("date").value="";count();$("out").replaceChildren();$("follow").hidden=true;window.scrollTo({top:0,behavior:"smooth"})};
+document.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>{$("case").value=b.dataset.ex;count();$("case").focus()});
+
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const MIC_ERRORS={
+  "not-allowed":"Microphone access is blocked. Allow the microphone for this site in your browser, and in macOS System Settings > Privacy & Security > Microphone.",
+  "service-not-allowed":"This browser does not allow speech recognition here. Try Chrome or Safari.",
+  "no-speech":"I did not hear anything. Check your microphone and start speaking right after pressing the button.",
+  "audio-capture":"No microphone was found. Check that one is connected and selected.",
+  "network":"Speech recognition needs an internet connection, and some browsers (such as Brave) block it. Try Chrome or Safari.",
+  "language-not-supported":"This browser cannot recognise the selected language. Try English or Hindi."};
+function setHint(msg,bad){$("hint").textContent=msg;$("hint").style.color=bad?"var(--high)":""}
+if(!SR){$("mic").hidden=true;setHint("Voice input is not supported in this browser. Use Chrome or Safari.",true)}
+else{let rec=null,base="";
+  $("mic").onclick=()=>{
+    if(rec){rec.stop();return}
+    rec=new SR();rec.lang=$("lang").value;rec.interimResults=true;rec.continuous=false;rec.maxAlternatives=1;
+    base=$("case").value.trim();
+    rec.onstart=()=>{$("mic").setAttribute("aria-pressed","true");$("mic").title="Stop";setHint("Listening… speak now.")};
+    rec.onresult=e=>{let t="";for(let i=0;i<e.results.length;i++)t+=e.results[i][0].transcript;$("case").value=(base?base+" ":"")+t;count()};
+    rec.onerror=e=>setHint(MIC_ERRORS[e.error]||("Voice input failed ("+e.error+")."),true);
+    rec.onend=()=>{rec=null;$("mic").setAttribute("aria-pressed","false");$("mic").title="Speak";
+      if($("hint").textContent.startsWith("Listening"))setHint("Done. Check the text and edit it if needed.")};
+    try{rec.start()}catch(err){rec=null;setHint("Could not start the microphone. Reload the page and try again.",true)}
+  }}
+</script>
+</body>
+</html>
